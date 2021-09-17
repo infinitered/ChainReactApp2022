@@ -1,7 +1,7 @@
-import { TalkModel } from "./talk"
+import { EventModel } from "./event"
 
 test("can be created", () => {
-  const instance = TalkModel.create({
+  const instance = EventModel.create({
     id: "asdf",
   })
 

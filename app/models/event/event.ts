@@ -4,8 +4,8 @@ import { SpeakerModel } from "../speaker/speaker"
 /**
  * Info for each conference talk.
  */
-export const TalkModel = types
-  .model("Talk")
+export const EventModel = types
+  .model("Event")
   .props({
     id: types.identifier,
     startTime: types.maybeNull(types.string),
@@ -16,17 +16,16 @@ export const TalkModel = types
     speakers: types.maybeNull(types.array(SpeakerModel)),
     menuItems: types.maybeNull(types.array(types.string)),
     sponsor: types.maybeNull(types.string),
-    talkType: types.maybeNull(types.string),
+    eventType: types.maybeNull(types.string),
     location: types.maybeNull(types.string),
     track: types.maybeNull(types.string),
-    discussionEnabled: types.maybeNull(types.boolean),
     prerequisites: types.maybeNull(types.array(types.string)),
   })
   .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
 
-type TalkType = Instance<typeof TalkModel>
-export interface Talk extends TalkType {}
-type TalkSnapshotType = SnapshotOut<typeof TalkModel>
-export interface TalkSnapshot extends TalkSnapshotType {}
-export const createTalkDefaultModel = () => types.optional(TalkModel, {})
+type EventType = Instance<typeof EventModel>
+export interface Event extends EventType {}
+type EventSnapshotType = SnapshotOut<typeof EventModel>
+export interface EventSnapshot extends EventSnapshotType {}
+export const createEventDefaultModel = () => types.optional(EventModel, {})

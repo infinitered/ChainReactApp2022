@@ -1,0 +1,40 @@
+{
+  "conferences": {
+    "2022": {
+      "events": [
+        {
+          "id": "",
+          "endTime": "",
+          "startTime": "",
+          "eventType": "",
+          "title": "",
+          "description": "",
+          "menuItems": [],
+          "image": "",
+          "location": "",
+          "speakerIds": [""],
+          "prerequisites": [""],
+          "sponsor": "",
+          "track": ""
+        }
+      ],
+      "speakers": [
+        {
+          "id": "",
+          "name": "",
+          "bio": "",
+          "image": "",
+          "employer": "",
+          "facebook": "",
+          "github": "",
+          "twitter": "",
+          "instagram": "",
+          "medium": "",
+          "dribbble": "",
+          "websites": "",
+          "eventIds": [""]
+        }
+      ]
+    }
+  }
+}
