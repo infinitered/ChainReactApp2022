@@ -70,15 +70,15 @@ export const ErrorComponent = (props: ErrorComponentProps) => {
   return (
     <View style={CONTAINER}>
       <Icon style={ICON} icon="bug" />
-      <Text style={TITLE_ERROR} tx={"errorScreen.title"} />
-      <Text style={FRIENDLY_SUBTITLE} tx={"errorScreen.friendlySubtitle"} />
+      <Text style={TITLE_ERROR} tx={"errors.title"} />
+      <Text style={FRIENDLY_SUBTITLE} tx={"errors.friendlySubtitle"} />
       <View style={ERROR_DETAILS_CONTAINER}>
         <ScrollView>
           <Text selectable style={CONTENT_ERROR} text={`${props.error}`} />
           {/* <Text selectable style={CONTENT_BACKTRACE} text={`${props.errorInfo.componentStack}`} /> */}
         </ScrollView>
       </View>
-      <Button style={BTN_RESET} onPress={props.onReset} tx="errorScreen.reset" />
+      <Button style={BTN_RESET} onPress={props.onReset} tx="errors.reset" />
     </View>
   )
 }

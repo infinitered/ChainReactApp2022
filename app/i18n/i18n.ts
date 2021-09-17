@@ -5,7 +5,7 @@ import en from "./en.json"
 
 i18n.fallbacks = true
 // i18n.translations = { en, ja }
-i18n.translations = { en, ja }
+i18n.translations = { en }
 
 i18n.locale = Localization.locale || "en"
 

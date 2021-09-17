@@ -1,5 +1,6 @@
 import { Instance, SnapshotOut, types } from "mobx-state-tree"
-import { SettingModel, TalkModel } from ".."
+import { TalkModel } from "../talk/talk"
+import { SettingModel } from "../setting/setting"
 
 /**
  * This holds all talks for the conference, as well as the

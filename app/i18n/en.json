@@ -8,7 +8,10 @@
     "send": "SEND"
   },
   "errors": {
-    "invalidEmail": "Invalid email address."
+    "invalidEmail": "Invalid email address.",
+    "reset": "Reset app",
+    "title": "Oops, something went wrong!",
+    "friendlySubtitle": "Sorry about that! We'll get a notification and work on this right away."
   },
   "tabbar": {
     "schedule": "Schedule",
@@ -18,7 +21,7 @@
   },
   "welcomeScreen": {
     "header1": "Welcome to",
-    "header2": "Chain React 2019",
+    "header2": "Chain React 2022",
     "subtitle": "Use our app to to view the schedule, explore the city, and access need-to-know details! You can even chat with others about each talk, right here in the app!",
     "nextScreenButton": "I'm Ready!"
   },
@@ -154,5 +157,9 @@
   "codeOfConductLink": {
     "pleaseRemember": "Please remember our ",
     "codeOfConduct": "Code of Conduct."
+  },
+  "storybook": {
+    "placeholder": "storybook.placeholder",
+    "field": "storybook.field"
   }
 }

@@ -30,10 +30,9 @@ cd ChainReactApp2022
 
 **Step 4:** Run the app:
 
-- for iOS
-  - run `yarn ios`
-- for Android
-  - run `yarn android`
+```bash
+yarn start
+```
 
 ## Deploying
 

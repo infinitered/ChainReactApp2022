@@ -1,11 +1,14 @@
 import { Instance, SnapshotOut, types } from "mobx-state-tree"
-import { createTalkStoreDefaultModel } from ".."
+import { TalkStoreModel } from "../talk-store/talk-store"
 
 /**
  * This is our primary store that holds all other stores.
  */
 export const RootStoreModel = types.model("RootStore").props({
-  talkStore: createTalkStoreDefaultModel(),
+  talkStore: types.optional(
+    types.late(() => TalkStoreModel),
+    {},
+  ),
 })
 
 /**

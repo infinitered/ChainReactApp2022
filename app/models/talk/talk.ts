@@ -1,5 +1,5 @@
 import { Instance, SnapshotOut, types } from "mobx-state-tree"
-import { SpeakerModel } from ".."
+import { SpeakerModel } from "../speaker/speaker"
 
 /**
  * Info for each conference talk.
