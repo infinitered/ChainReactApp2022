@@ -1,12 +1,11 @@
 import { Instance, SnapshotOut, types } from "mobx-state-tree"
-import { CharacterStoreModel } from "../character-store/character-store"
+import { createTalkStoreDefaultModel } from ".."
 
 /**
- * A RootStore model.
+ * This is our primary store that holds all other stores.
  */
-// prettier-ignore
 export const RootStoreModel = types.model("RootStore").props({
-  characterStore: types.optional(CharacterStoreModel, {} as any),
+  talkStore: createTalkStoreDefaultModel(),
 })
 
 /**
