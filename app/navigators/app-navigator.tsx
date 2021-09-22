@@ -8,7 +8,7 @@ import React from "react"
 import { useColorScheme } from "react-native"
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { ScheduleScreen, VenueScreen, WelcomeScreen } from "../screens"
+import { CodeOfConductScreen, ScheduleScreen, VenueScreen, WelcomeScreen } from "../screens"
 import { navigationRef } from "./navigation-utilities"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { color, palette, spacing } from "../theme"
@@ -32,7 +32,8 @@ export type NavigatorParamList = {
 }
 
 export type ScheduleNavigatorParamList = {
-  schedule: undefined
+  scheduleScreen: undefined
+  scheduleCodeOfConduct: undefined
 }
 
 interface NavigationProps extends Partial<React.ComponentProps<typeof NavigationContainer>> {}
@@ -44,8 +45,13 @@ const ScheduleStack = createNativeStackNavigator<ScheduleNavigatorParamList>()
 
 const Schedule = () => {
   return (
-    <ScheduleStack.Navigator>
-      <ScheduleStack.Screen name="schedule" component={ScheduleScreen} />
+    <ScheduleStack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <ScheduleStack.Screen name="scheduleScreen" component={ScheduleScreen} />
+      <ScheduleStack.Screen name="scheduleCodeOfConduct" component={CodeOfConductScreen} />
     </ScheduleStack.Navigator>
   )
 }
@@ -63,10 +69,10 @@ const MainTabs = () => {
         },
         tabBarActiveTintColor: palette.white,
       })}
-      initialRouteName="venueTab"
+      initialRouteName="venue"
     >
-      <Tab.Screen name="scheduleTab" component={Schedule} />
-      <Tab.Screen name="venueTab" component={VenueScreen} />
+      <Tab.Screen name="schedule" component={Schedule} />
+      <Tab.Screen name="venue" component={VenueScreen} />
     </Tab.Navigator>
   )
 }

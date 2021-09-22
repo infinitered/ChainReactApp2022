@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { observer } from "mobx-react-lite"
 import { RefreshControl, ScrollView, TextStyle, View, ViewStyle } from "react-native"
-import { ScheduleCell, Screen, Text } from "../../components"
+import { ScheduleCell, ScheduleNav, Screen, Text } from "../../components"
 // import { useNavigation } from "@react-navigation/native"
 // import { useStores } from "../../models"
 import { color, spacing } from "../../theme"
@@ -142,7 +142,7 @@ export const ScheduleScreen = observer(function ScheduleScreen() {
           <ScheduleContent eventStore={eventStore} selected={selected} />
         )}
       </ScrollView>
-      {/* <ScheduleNav selected={this.state.selected} onSelected={this.onSelected} /> */}
+      <ScheduleNav selected={selected} onSelected={(sel) => setSelected(sel)} />
     </Screen>
   )
 })
