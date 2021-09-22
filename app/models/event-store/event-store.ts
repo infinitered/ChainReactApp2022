@@ -15,7 +15,11 @@ export const EventStoreModel = types
     settings: types.optional(types.array(SettingModel), []),
   })
   .views((store) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
-  .actions((store) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
+  .actions((store) => ({
+    async getAll() {
+      // get all the datas pls
+    },
+  })) // eslint-disable-line @typescript-eslint/no-unused-vars
 
 type EventStoreType = Instance<typeof EventStoreModel>
 export interface EventStore extends EventStoreType {}

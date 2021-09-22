@@ -1,6 +1,8 @@
 import { Instance, SnapshotOut, types } from "mobx-state-tree"
 import { SpeakerModel } from "../speaker/speaker"
 
+export type EVENT_DAYS = "wednesday" | "thursday" | "friday"
+
 /**
  * Info for each conference talk.
  */

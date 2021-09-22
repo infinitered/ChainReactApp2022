@@ -37,6 +37,8 @@
     "@react-navigation/stack": "~6.0.1",
     "@unimodules/core": "~7.1.1",
     "apisauce": "2.0.0",
+    "date-fns": "^2.24.0",
+    "date-fns-timezone": "^0.1.4",
     "expo": "^42.0.0",
     "expo-linear-gradient": "~9.2.0",
     "expo-localization": "~10.2.0",

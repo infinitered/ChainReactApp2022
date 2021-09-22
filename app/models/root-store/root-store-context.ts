@@ -19,4 +19,4 @@ export const RootStoreProvider = RootStoreContext.Provider
  * `const { someStore, someOtherStore } = useStores()`,
  * or less likely: `const rootStore = useStores()`
  */
-export const useStores = () => useContext(RootStoreContext)
+export const useStores = (): RootStore => useContext(RootStoreContext)

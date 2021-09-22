@@ -7,14 +7,15 @@ import { EventStoreModel } from "../event-store/event-store"
 export const RootStoreModel = types
   .model("RootStore")
   .props({
-    talkStore: types.optional(
+    eventStore: types.optional(
       types.late(() => EventStoreModel),
       {},
     ),
   })
   .actions((root) => ({
     reset() {
-      root.talkStore = EventStoreModel.create({})
+      // Need to properly reset everything here
+      // root.eventStore = EventStoreModel.create({})
     },
   }))
 
