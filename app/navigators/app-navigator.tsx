@@ -8,8 +8,11 @@ import React from "react"
 import { useColorScheme } from "react-native"
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { WelcomeScreen } from "../screens"
+import { VenueScreen, WelcomeScreen } from "../screens"
 import { navigationRef } from "./navigation-utilities"
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
+import { color, palette, spacing } from "../theme"
+import { TabIcon } from "../components"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -25,35 +28,52 @@ import { navigationRef } from "./navigation-utilities"
  */
 export type NavigatorParamList = {
   welcome: undefined
+  tabs: undefined
 }
+interface NavigationProps extends Partial<React.ComponentProps<typeof NavigationContainer>> {}
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
 const Stack = createNativeStackNavigator<NavigatorParamList>()
+const Tab = createBottomTabNavigator()
 
-const AppStack = () => {
+const MainTabs = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused }) => <TabIcon routeName={route.name} focused={focused} />,
         headerShown: false,
-      }}
-      initialRouteName="welcome"
+        tabBarStyle: {
+          backgroundColor: color.tabbar,
+          height: 75,
+          paddingVertical: spacing.tiny,
+        },
+        tabBarActiveTintColor: palette.white,
+      })}
+      initialRouteName="venue"
     >
-      <Stack.Screen name="welcome" component={WelcomeScreen} />
-    </Stack.Navigator>
+      <Tab.Screen name="venue" component={VenueScreen} />
+    </Tab.Navigator>
   )
 }
 
-interface NavigationProps extends Partial<React.ComponentProps<typeof NavigationContainer>> {}
-
 export const AppNavigator = (props: NavigationProps) => {
   const colorScheme = useColorScheme()
+
   return (
     <NavigationContainer
       ref={navigationRef}
       theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
       {...props}
     >
-      <AppStack />
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+        initialRouteName="welcome"
+      >
+        <Stack.Screen name="welcome" component={WelcomeScreen} />
+        <Stack.Screen name="tabs" component={MainTabs} />
+      </Stack.Navigator>
     </NavigationContainer>
   )
 }
@@ -69,5 +89,5 @@ AppNavigator.displayName = "AppNavigator"
  *
  * `canExit` is used in ./app/app.tsx in the `useBackButtonHandler` hook.
  */
-const exitRoutes = ["welcome"]
+const exitRoutes = ["welcome", "tabs"]
 export const canExit = (routeName: string) => exitRoutes.includes(routeName)

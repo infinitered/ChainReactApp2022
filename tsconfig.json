@@ -27,5 +27,6 @@
     "app",
     "test",
     "storybook"
-  ]
+  ],
+  "extends": "expo/tsconfig.base"
 }

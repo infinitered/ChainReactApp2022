@@ -58,7 +58,7 @@ if (__DEV__) {
 export class Reactotron {
   config: ReactotronConfig
 
-  rootStore: any
+  rootStore: RootStore
 
   /**
    * Create the Reactotron service.
@@ -149,6 +149,7 @@ export class Reactotron {
         command: "resetStore",
         handler: () => {
           console.tron.log("resetting store")
+          this.rootStore.reset()
           clear()
         },
       })

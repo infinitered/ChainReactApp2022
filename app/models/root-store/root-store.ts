@@ -4,12 +4,19 @@ import { EventStoreModel } from "../event-store/event-store"
 /**
  * This is our primary store that holds all other stores.
  */
-export const RootStoreModel = types.model("RootStore").props({
-  talkStore: types.optional(
-    types.late(() => EventStoreModel),
-    {},
-  ),
-})
+export const RootStoreModel = types
+  .model("RootStore")
+  .props({
+    talkStore: types.optional(
+      types.late(() => EventStoreModel),
+      {},
+    ),
+  })
+  .actions((root) => ({
+    reset() {
+      root.talkStore = EventStoreModel.create({})
+    },
+  }))
 
 /**
  * The RootStore instance.
