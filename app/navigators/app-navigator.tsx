@@ -13,6 +13,7 @@ import { navigationRef } from "./navigation-utilities"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { color, palette, spacing } from "../theme"
 import { TabIcon } from "../components"
+import { EventDetailsScreen } from "../screens/event-details/event-details-screen"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -33,6 +34,7 @@ export type NavigatorParamList = {
 
 export type ScheduleNavigatorParamList = {
   scheduleScreen: undefined
+  eventDetails: undefined
   scheduleCodeOfConduct: undefined
 }
 
@@ -51,6 +53,7 @@ const Schedule = () => {
       }}
     >
       <ScheduleStack.Screen name="scheduleScreen" component={ScheduleScreen} />
+      <ScheduleStack.Screen name="eventDetails" component={EventDetailsScreen} />
       <ScheduleStack.Screen name="scheduleCodeOfConduct" component={CodeOfConductScreen} />
     </ScheduleStack.Navigator>
   )

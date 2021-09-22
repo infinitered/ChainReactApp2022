@@ -2,6 +2,7 @@ import { Instance, SnapshotOut, types } from "mobx-state-tree"
 import { SpeakerModel } from "../speaker/speaker"
 
 export type EVENT_DAYS = "wednesday" | "thursday" | "friday"
+export const DAYS = ["wednesday", "thursday", "friday"]
 
 /**
  * Info for each conference talk.
@@ -12,6 +13,7 @@ export const EventModel = types
     id: types.identifier,
     startTime: types.maybeNull(types.string),
     endTime: types.maybeNull(types.string),
+    day: types.maybeNull(types.enumeration(DAYS)),
     title: types.maybeNull(types.string),
     description: types.maybeNull(types.string),
     image: types.maybeNull(types.string),

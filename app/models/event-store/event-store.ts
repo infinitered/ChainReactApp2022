@@ -1,4 +1,5 @@
 import { Instance, SnapshotOut, types } from "mobx-state-tree"
+import { EVENT_DAYS } from ".."
 import { EventModel } from "../event/event"
 import { SettingModel } from "../setting/setting"
 
@@ -14,7 +15,22 @@ export const EventStoreModel = types
     updatedAt: types.maybe(types.Date),
     settings: types.optional(types.array(SettingModel), []),
   })
-  .views((store) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
+  .views((store) => ({
+    eventsForDay(day: EVENT_DAYS) {
+      return store.events.filter((ev) => ev.day === day)
+    },
+  }))
+  .views((store) => ({
+    get workshops() {
+      return store.eventsForDay("wednesday")
+    },
+    get thursdayEvents() {
+      return store.eventsForDay("thursday")
+    },
+    get fridayEvents() {
+      return store.eventsForDay("friday")
+    },
+  })) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((store) => ({
     async getAll() {
       // get all the datas pls

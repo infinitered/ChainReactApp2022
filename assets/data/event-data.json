@@ -3,36 +3,37 @@
     "2022": {
       "events": [
         {
-          "id": "",
-          "endTime": "",
-          "startTime": "",
-          "eventType": "",
-          "title": "",
-          "description": "",
+          "id": "opening",
+          "startTime": "9:00 AM",
+          "endTime": "9:45 AM",
+          "day": "thursday",
+          "eventType": "talk",
+          "title": "Welcome",
+          "description": "Jamon welcomes everyone BACK to Chain React!",
           "menuItems": [],
           "image": "",
-          "location": "",
-          "speakerIds": [""],
-          "prerequisites": [""],
-          "sponsor": "",
-          "track": ""
+          "location": "Portland Center Stage",
+          "speakerIds": ["jamon-holmgren"],
+          "prerequisites": [],
+          "sponsor": "Infinite Red",
+          "track": "main"
         }
       ],
       "speakers": [
         {
-          "id": "",
-          "name": "",
-          "bio": "",
+          "id": "jamon-holmgren",
+          "name": "Jamon Holmgren",
+          "bio": "Jamon is the co-founder and CTO of Infinite Red, React Native open source team member, React Native Radio host, and Twitch streamer #ReactNativeLive.",
           "image": "",
-          "employer": "",
-          "facebook": "",
-          "github": "",
-          "twitter": "",
+          "employer": "Infinite Red",
+          "facebook": null,
+          "github": "https://github.com/jamonholmgren",
+          "twitter": "https://twitter.com/jamonholmgren",
           "instagram": "",
           "medium": "",
           "dribbble": "",
-          "websites": "",
-          "eventIds": [""]
+          "websites": ["https://jamonholmgren.com", "https://infinite.red"],
+          "eventIds": ["opening"]
         }
       ]
     }
