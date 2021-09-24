@@ -3,6 +3,7 @@ import { useNavigation } from "@react-navigation/core"
 import { TextStyle, View } from "react-native"
 import { ScheduleCell, Text } from "../../components"
 import { color, spacing } from "../../theme"
+import { Event, useStores } from "../../models"
 
 const SUBTITLE: TextStyle = {
   color: color.palette.white,
@@ -17,15 +18,19 @@ const DATE: TextStyle = {
   marginBottom: spacing.small + spacing.large,
 }
 
-export const ScheduleWorkshops = ({ eventStore }) => {
+export const ScheduleWorkshops = () => {
+  const { eventStore } = useStores()
   const navigation = useNavigation()
 
   const { events } = eventStore
   const beginnerWorkshop = events.find((event) => event.track === "BEGINNER")
   const intermediateWorkshop = events.find((event) => event.track === "INTERMEDIATE")
   const advancedWorkshop = events.find((event) => event.track === "ADVANCED")
-  const welcomeParty = events.find((event) => event.eventType === "AFTERPARTY")
-  const onPressWorkshop = (event) => navigation.navigate("eventDetails", { event })
+  const welcomeParty = events.find((event) => event.eventType === "afterparty")
+  const onPressWorkshop = (event: Event) => {
+    eventStore.setCurrentEvent(event)
+    navigation.navigate("eventDetails")
+  }
 
   return (
     <View>

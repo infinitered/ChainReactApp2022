@@ -8,6 +8,7 @@ import { mst } from "reactotron-mst"
 import { clear } from "../../utils/storage"
 import { goBack, resetRoot, navigate } from "../../navigators/navigation-utilities"
 import { Platform } from "react-native"
+import { useNavigation } from "@react-navigation/core"
 
 // Teach TypeScript about the bad things we want to do.
 declare global {
@@ -160,7 +161,7 @@ export class Reactotron {
         command: "resetNavigation",
         handler: () => {
           console.tron.log("resetting navigation state")
-          resetRoot({ index: 0, routes: [] })
+          // useNavigation().navigate("welcome")
         },
       })
 

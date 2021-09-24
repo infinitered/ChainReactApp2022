@@ -23,6 +23,7 @@ export const viewPresets = {
 }
 
 export const imageSource = {
+  websites: require("./social_icon_assets/link.png"),
   website: require("./social_icon_assets/link.png"),
   twitter: require("./social_icon_assets/twitter.png"),
   github: require("./social_icon_assets/github.png"),

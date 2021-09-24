@@ -51,7 +51,7 @@ export async function setupRootStore() {
       env,
     )
   } catch (e) {
-    console.log(e)
+    __DEV__ && console.tron.error(e.message, null)
   }
   // but please inform us what happened
   // __DEV__ && console.tron.error(e.message, null)

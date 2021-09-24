@@ -1,8 +1,8 @@
 import { Instance, SnapshotOut, types } from "mobx-state-tree"
-import { EVENT_DAYS } from ".."
-import { EventModel } from "../event/event"
+import { EventModel, Event } from "../event/event"
 import { SpeakerModel } from "../speaker/speaker"
 import { SettingModel } from "../setting/setting"
+import { EVENT_DAYS } from ".."
 
 /**
  * This holds all talks and other events for the conference,
@@ -13,6 +13,7 @@ export const EventStoreModel = types
   .props({
     events: types.optional(types.array(EventModel), []),
     speakers: types.optional(types.array(SpeakerModel), []),
+    currentEvent: types.maybeNull(types.reference(EventModel)),
     status: types.optional(types.enumeration(["pending", "done", "error"]), "done"),
     updatedAt: types.maybe(types.Date),
     settings: types.optional(types.array(SettingModel), []),
@@ -36,6 +37,9 @@ export const EventStoreModel = types
   .actions((store) => ({
     async getAll() {
       // get all the datas pls
+    },
+    setCurrentEvent(event: Event) {
+      store.currentEvent = event
     },
   })) // eslint-disable-line @typescript-eslint/no-unused-vars
 

@@ -13,6 +13,7 @@ export const EventModel = types
     id: types.identifier,
     startTime: types.maybeNull(types.string),
     endTime: types.maybeNull(types.string),
+    duration: types.maybeNull(types.string),
     day: types.maybeNull(types.enumeration(DAYS)),
     title: types.maybeNull(types.string),
     description: types.maybeNull(types.string),
@@ -20,9 +21,22 @@ export const EventModel = types
     speakers: types.array(types.reference(SpeakerModel)),
     menuItems: types.maybeNull(types.array(types.string)),
     sponsor: types.maybeNull(types.string),
-    eventType: types.maybeNull(types.string),
+    eventType: types.maybeNull(
+      types.enumeration([
+        "talk",
+        "announcement",
+        "breakfast",
+        "lunch",
+        "workshop",
+        "welcome",
+        "goodbye",
+        "break",
+        "panel",
+        "afterparty",
+      ]),
+    ),
     location: types.maybeNull(types.string),
-    track: types.maybeNull(types.string),
+    track: types.maybeNull(types.enumeration(["BEGINNER", "INTERMEDIATE", "ADVANCED"])),
     prerequisites: types.maybeNull(types.array(types.string)),
   })
   .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars

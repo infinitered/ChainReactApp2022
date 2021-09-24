@@ -3,9 +3,27 @@
     "2022": {
       "events": [
         {
+          "id": "workshop-beginner-basic-react-native",
+          "startTime": "9:00 AM",
+          "endTime": "5:00 PM",
+          "duration": "All day",
+          "day": "wednesday",
+          "eventType": "workshop",
+          "title": "Workshop: Basic React Native",
+          "description": "Jamon and Gant teach you how to React Native",
+          "menuItems": [],
+          "image": "https://pbs.twimg.com/profile_images/1203024204561440768/DBOvP1MA_400x400.jpg",
+          "location": "The Benson",
+          "speakers": ["gant-laborde", "jamon-holmgren"],
+          "prerequisites": [],
+          "sponsor": "Learn with Jason",
+          "track": "BEGINNER"
+        },
+        {
           "id": "opening",
           "startTime": "9:00 AM",
           "endTime": "9:30 AM",
+          "duration": "30 min",
           "day": "thursday",
           "eventType": "announcement",
           "title": "Welcome",
@@ -16,12 +34,13 @@
           "speakers": ["gant-laborde", "jamon-holmgren"],
           "prerequisites": [],
           "sponsor": "Infinite Red",
-          "track": "main"
+          "track": null
         },
         {
           "id": "closing",
           "startTime": "5:00 PM",
           "endTime": "5:30 PM",
+          "duration": "30 min",
           "day": "thursday",
           "eventType": "announcement",
           "title": "Closing",
@@ -32,7 +51,7 @@
           "speakers": ["gant-laborde", "jamon-holmgren"],
           "prerequisites": [],
           "sponsor": "Infinite Red",
-          "track": "main"
+          "track": null
         }
       ],
       "speakers": [

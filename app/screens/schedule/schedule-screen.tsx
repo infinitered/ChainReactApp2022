@@ -45,7 +45,7 @@ export const ScheduleScreen = observer(function ScheduleScreen() {
       >
         <Text preset="title" tx="scheduleScreen.title" style={TITLE} />
         {selected === "wednesday" ? (
-          <ScheduleWorkshops eventStore={eventStore} />
+          <ScheduleWorkshops />
         ) : (
           <ScheduleContent eventStore={eventStore} selected={selected} />
         )}

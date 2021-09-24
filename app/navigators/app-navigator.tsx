@@ -109,7 +109,7 @@ export const AppNavigator = (props: NavigationProps) => {
 
   return (
     <NavigationContainer
-      ref={navigationRef}
+      ref={navigationRef as any} // TODO: fix ref typings (someone want to submit a PR?)
       theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
       {...props}
     >
