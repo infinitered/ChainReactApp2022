@@ -17,7 +17,7 @@ export const EventModel = types
     title: types.maybeNull(types.string),
     description: types.maybeNull(types.string),
     image: types.maybeNull(types.string),
-    speakers: types.maybeNull(types.array(SpeakerModel)),
+    speakers: types.array(types.reference(SpeakerModel)),
     menuItems: types.maybeNull(types.array(types.string)),
     sponsor: types.maybeNull(types.string),
     eventType: types.maybeNull(types.string),

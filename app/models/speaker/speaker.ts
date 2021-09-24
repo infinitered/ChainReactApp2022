@@ -10,6 +10,7 @@ export const SpeakerModel = types
     name: types.maybeNull(types.string),
     employer: types.maybeNull(types.string),
     image: types.maybeNull(types.string),
+    bio: types.maybeNull(types.string),
     facebook: types.maybeNull(types.string),
     github: types.maybeNull(types.string),
     twitter: types.maybeNull(types.string),
@@ -17,10 +18,9 @@ export const SpeakerModel = types
     instagram: types.maybeNull(types.string),
     dribbble: types.maybeNull(types.string),
     websites: types.maybeNull(types.array(types.string)),
-    bio: types.maybeNull(types.string),
   })
-  .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
-  .actions((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
+  .views((speaker) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
+  .actions((speaker) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
 
 type SpeakerType = Instance<typeof SpeakerModel>
 export interface Speaker extends SpeakerType {}

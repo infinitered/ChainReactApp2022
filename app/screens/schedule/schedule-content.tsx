@@ -41,7 +41,9 @@ export const ScheduleContent = ({ eventStore, selected }: ScheduleContentProps) 
         preset="label"
       />
       {selectedEvents &&
-        selectedEvents.map((event, index) => <RenderEvent event={event} index={index} />)}
+        selectedEvents.map((event, index) => (
+          <RenderEvent event={event} index={index} key={event.id} />
+        ))}
     </View>
   )
 }

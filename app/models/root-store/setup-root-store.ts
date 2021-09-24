@@ -39,15 +39,20 @@ export async function setupRootStore() {
   // if there's any problems loading, then let's at least fallback to an empty state
   // instead of crashing.
   const conf2022 = require("../../../assets/data/event-data.json")["conferences"]["2022"]
-  rootStore = RootStoreModel.create(
-    {
-      eventStore: EventStoreModel.create({
-        events: conf2022["events"],
-      }),
-    },
-    env,
-  )
 
+  try {
+    rootStore = RootStoreModel.create(
+      {
+        eventStore: EventStoreModel.create({
+          speakers: conf2022["speakers"],
+          events: conf2022["events"],
+        }),
+      },
+      env,
+    )
+  } catch (e) {
+    console.log(e)
+  }
   // but please inform us what happened
   // __DEV__ && console.tron.error(e.message, null)
   // }

@@ -1,6 +1,7 @@
 import { Instance, SnapshotOut, types } from "mobx-state-tree"
 import { EVENT_DAYS } from ".."
 import { EventModel } from "../event/event"
+import { SpeakerModel } from "../speaker/speaker"
 import { SettingModel } from "../setting/setting"
 
 /**
@@ -11,6 +12,7 @@ export const EventStoreModel = types
   .model("EventStore")
   .props({
     events: types.optional(types.array(EventModel), []),
+    speakers: types.optional(types.array(SpeakerModel), []),
     status: types.optional(types.enumeration(["pending", "done", "error"]), "done"),
     updatedAt: types.maybe(types.Date),
     settings: types.optional(types.array(SettingModel), []),

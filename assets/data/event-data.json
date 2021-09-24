@@ -7,13 +7,13 @@
           "startTime": "9:00 AM",
           "endTime": "9:45 AM",
           "day": "thursday",
-          "eventType": "talk",
+          "eventType": "announcement",
           "title": "Welcome",
           "description": "Jamon welcomes everyone BACK to Chain React!",
           "menuItems": [],
-          "image": "",
+          "image": "https://pbs.twimg.com/profile_images/1203024204561440768/DBOvP1MA_400x400.jpg",
           "location": "Portland Center Stage",
-          "speakerIds": ["jamon-holmgren"],
+          "speakers": ["jamon-holmgren"],
           "prerequisites": [],
           "sponsor": "Infinite Red",
           "track": "main"
@@ -23,17 +23,30 @@
         {
           "id": "jamon-holmgren",
           "name": "Jamon Holmgren",
-          "bio": "Jamon is the co-founder and CTO of Infinite Red, React Native open source team member, React Native Radio host, and Twitch streamer #ReactNativeLive.",
-          "image": "",
           "employer": "Infinite Red",
+          "image": "",
+          "bio": "Jamon is the co-founder and CTO of Infinite Red, React Native open source team member, React Native Radio host, and Twitch streamer #ReactNativeLive.",
           "facebook": null,
           "github": "https://github.com/jamonholmgren",
           "twitter": "https://twitter.com/jamonholmgren",
           "instagram": "",
           "medium": "",
           "dribbble": "",
-          "websites": ["https://jamonholmgren.com", "https://infinite.red"],
-          "eventIds": ["opening"]
+          "websites": ["https://jamonholmgren.com", "https://infinite.red"]
+        },
+        {
+          "id": "gant-laborde",
+          "name": "Gant Laborde",
+          "employer": "Infinite Red",
+          "image": "",
+          "bio": "Gant is Chief Innovation Officer and owner at Infinite Red. He is the author of Learning Tensorflow.js, creator of Ignite, and mad scientist.",
+          "facebook": null,
+          "github": "https://github.com/jamonholmgren",
+          "twitter": "https://twitter.com/jamonholmgren",
+          "instagram": "",
+          "medium": "",
+          "dribbble": "",
+          "websites": ["https://jamonholmgren.com", "https://infinite.red"]
         }
       ]
     }

@@ -88,9 +88,7 @@ export class ScheduleCell extends React.Component<ScheduleCellProps, {}> {
   renderTime = () => {
     const { preset, event } = this.props
     const style: any = ScheduleCellPresets[preset] || ScheduleCellPresets.default
-    const label = `${formatToTimeZone(event.startTime, "h:mm A", {
-      timeZone: TIMEZONE,
-    })} - ${formatToTimeZone(event.endTime, "h:mm A", { timeZone: TIMEZONE })}`
+    const label = `${event.startTime}`
     return (
       <View style={style.timeWrapper as ViewStyle}>
         {event.track && event.track !== "NONE" && (
