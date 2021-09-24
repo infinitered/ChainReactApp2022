@@ -5,7 +5,7 @@
         {
           "id": "opening",
           "startTime": "9:00 AM",
-          "endTime": "9:45 AM",
+          "endTime": "9:30 AM",
           "day": "thursday",
           "eventType": "announcement",
           "title": "Welcome",
@@ -13,7 +13,23 @@
           "menuItems": [],
           "image": "https://pbs.twimg.com/profile_images/1203024204561440768/DBOvP1MA_400x400.jpg",
           "location": "Portland Center Stage",
-          "speakers": ["jamon-holmgren"],
+          "speakers": ["gant-laborde", "jamon-holmgren"],
+          "prerequisites": [],
+          "sponsor": "Infinite Red",
+          "track": "main"
+        },
+        {
+          "id": "closing",
+          "startTime": "5:00 PM",
+          "endTime": "5:30 PM",
+          "day": "thursday",
+          "eventType": "announcement",
+          "title": "Closing",
+          "description": "Ending announcements for Day 1",
+          "menuItems": [],
+          "image": "https://pbs.twimg.com/profile_images/1203024204561440768/DBOvP1MA_400x400.jpg",
+          "location": "Portland Center Stage",
+          "speakers": ["gant-laborde", "jamon-holmgren"],
           "prerequisites": [],
           "sponsor": "Infinite Red",
           "track": "main"
@@ -29,9 +45,9 @@
           "facebook": null,
           "github": "https://github.com/jamonholmgren",
           "twitter": "https://twitter.com/jamonholmgren",
-          "instagram": "",
-          "medium": "",
-          "dribbble": "",
+          "instagram": null,
+          "medium": null,
+          "dribbble": null,
           "websites": ["https://jamonholmgren.com", "https://infinite.red"]
         },
         {
@@ -41,12 +57,12 @@
           "image": "",
           "bio": "Gant is Chief Innovation Officer and owner at Infinite Red. He is the author of Learning Tensorflow.js, creator of Ignite, and mad scientist.",
           "facebook": null,
-          "github": "https://github.com/jamonholmgren",
-          "twitter": "https://twitter.com/jamonholmgren",
-          "instagram": "",
-          "medium": "",
-          "dribbble": "",
-          "websites": ["https://jamonholmgren.com", "https://infinite.red"]
+          "github": "https://github.com/GantMan",
+          "twitter": "https://twitter.com/gantlaborde",
+          "instagram": null,
+          "medium": null,
+          "dribbble": null,
+          "websites": ["https://gantlaborde.com", "https://infinite.red"]
         }
       ]
     }

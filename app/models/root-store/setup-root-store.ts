@@ -2,7 +2,7 @@ import { onSnapshot } from "mobx-state-tree"
 import { RootStoreModel, RootStore } from "./root-store"
 import { Environment } from "../environment"
 import * as storage from "../../utils/storage"
-import { EventStoreModel } from ".."
+import { EventSnapshot, EventStoreModel, SpeakerSnapshot } from ".."
 
 /**
  * The key we'll be saving our state as within async storage.
@@ -43,10 +43,10 @@ export async function setupRootStore() {
   try {
     rootStore = RootStoreModel.create(
       {
-        eventStore: EventStoreModel.create({
-          speakers: conf2022["speakers"],
-          events: conf2022["events"],
-        }),
+        eventStore: {
+          speakers: conf2022["speakers"] as SpeakerSnapshot[],
+          events: conf2022["events"] as EventSnapshot[],
+        },
       },
       env,
     )
