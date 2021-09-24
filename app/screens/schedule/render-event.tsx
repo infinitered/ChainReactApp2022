@@ -18,7 +18,8 @@ export const RenderEvent = ({ event, index }: RenderEventProps) => {
       event={event}
       preset={cellPreset}
       onPress={(event: Event) => {
-        navigation.navigate("eventDetails", { event })
+        navigation.navigate("eventDetails")
+        // TODO set current event...
       }}
       key={index}
     />

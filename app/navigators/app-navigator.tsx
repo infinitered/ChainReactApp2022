@@ -6,7 +6,12 @@
  */
 import React from "react"
 import { useColorScheme } from "react-native"
-import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native"
+import {
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme,
+  NavigatorScreenParams,
+} from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { CodeOfConductScreen, ScheduleScreen, VenueScreen, WelcomeScreen } from "../screens"
 import { navigationRef } from "./navigation-utilities"
@@ -29,7 +34,7 @@ import { EventDetailsScreen } from "../screens/event-details/event-details-scree
  */
 export type NavigatorParamList = {
   welcome: undefined
-  tabs: undefined
+  tabs: NavigatorScreenParams<ScheduleNavigatorParamList>
 }
 
 export type ScheduleNavigatorParamList = {
@@ -38,11 +43,30 @@ export type ScheduleNavigatorParamList = {
   scheduleCodeOfConduct: undefined
 }
 
+export type TabNavigatorParamList = {
+  schedule: NavigatorScreenParams<ScheduleNavigatorParamList>
+  venue: undefined
+}
+
+declare global {
+  /**
+   * TypeScript definitions for `useNavigation` can be extended by using [declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html)
+   * More: https://reactnavigation.org/docs/typescript/#specifying-default-types-for-usenavigation-link-ref-etc
+   */
+  // eslint-disable-next-line @typescript-eslint/no-namespace
+  namespace ReactNavigation {
+    interface RootParamList
+      extends NavigatorParamList,
+        ScheduleNavigatorParamList,
+        TabNavigatorParamList {}
+  }
+}
+
 interface NavigationProps extends Partial<React.ComponentProps<typeof NavigationContainer>> {}
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
 const Stack = createNativeStackNavigator<NavigatorParamList>()
-const Tab = createBottomTabNavigator()
+const Tab = createBottomTabNavigator<TabNavigatorParamList>()
 const ScheduleStack = createNativeStackNavigator<ScheduleNavigatorParamList>()
 
 const Schedule = () => {
