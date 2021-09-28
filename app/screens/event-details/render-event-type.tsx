@@ -5,6 +5,7 @@ import { RenderTalk } from "./render-talk"
 import { RenderAnnouncement } from "./render-announcement"
 import { RenderWorkshop } from "./render-workshop"
 import { RenderMeal } from "./render-meal"
+import { RenderAfterParty } from "./render-after-party"
 
 type RenderEventTypeProps = {
   event: Event
@@ -23,8 +24,8 @@ export const RenderEventType = ({ event }: RenderEventTypeProps) => {
     //   return <RenderPanel />
     case "announcement":
       return <RenderAnnouncement event={event} />
-    // case "afterparty":
-    //   return <RenderAfterParty />
+    case "afterparty":
+      return <RenderAfterParty event={event} />
     default:
       return null
   }

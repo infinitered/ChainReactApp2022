@@ -11,7 +11,6 @@
           "eventType": "workshop",
           "title": "Workshop: Basic React Native",
           "description": "Jamon and Gant teach you how to React Native",
-          "menuItems": [],
           "image": "https://pbs.twimg.com/profile_images/1203024204561440768/DBOvP1MA_400x400.jpg",
           "location": "The Benson",
           "speakers": ["gant-laborde", "jamon-holmgren"],
@@ -33,9 +32,7 @@
           "image": "https://pbs.twimg.com/profile_images/1203024204561440768/DBOvP1MA_400x400.jpg",
           "location": "Portland Center Stage",
           "speakers": ["gant-laborde", "jamon-holmgren"],
-          "prerequisites": [],
-          "sponsor": "Infinite Red",
-          "track": null
+          "sponsor": "Infinite Red"
         },
         {
           "id": "day-1-lunch",
@@ -50,9 +47,7 @@
           "menuItems": ["pizza", "diet coke", "breadsticks", "sushi"],
           "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
           "location": "Portland Center Stage",
-          "prerequisites": [],
-          "sponsor": "Infinite Red",
-          "track": null
+          "sponsor": "Infinite Red"
         },
         {
           "id": "day-1-closing",
@@ -69,8 +64,22 @@
           "location": "Portland Center Stage",
           "speakers": ["gant-laborde", "jamon-holmgren"],
           "prerequisites": [],
-          "sponsor": "Infinite Red",
-          "track": null
+          "sponsor": "Infinite Red"
+        },
+        {
+          "id": "day-1-afterparty",
+          "startTime": "7:30 PM",
+          "endTime": "9:30 PM",
+          "duration": "2 hours",
+          "day": "thursday",
+          "eventType": "afterparty",
+          "shortTitle": "Afterparty",
+          "title": "Afterparty by Nike",
+          "description": "Join us for the afterparty, sponsored by Nike (not really)",
+          "menuItems": ["beer", "pretzels", "FOMO"],
+          "image": "https://pbs.twimg.com/profile_images/1203024204561440768/DBOvP1MA_400x400.jpg",
+          "location": "Nike Headquarters",
+          "sponsor": "Nike"
         }
       ],
       "speakers": [
