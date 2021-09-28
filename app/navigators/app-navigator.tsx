@@ -19,6 +19,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { color, palette, spacing } from "../theme"
 import { TabIcon } from "../components"
 import { EventDetailsScreen } from "../screens/event-details/event-details-screen"
+import { BackButton } from "../components/back-button/back-button"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -73,10 +74,17 @@ const Schedule = () => {
   return (
     <ScheduleStack.Navigator
       screenOptions={{
-        headerShown: false,
+        // headerShown: false,
+        headerStyle: { backgroundColor: color.palette.portGore },
+        // headerBackImage: <BackButton backTitle={"Back"} />,
+        headerTintColor: color.palette.shamrock,
       }}
     >
-      <ScheduleStack.Screen name="scheduleScreen" component={ScheduleScreen} />
+      <ScheduleStack.Screen
+        name="scheduleScreen"
+        component={ScheduleScreen}
+        options={{ headerShown: false }}
+      />
       <ScheduleStack.Screen name="eventDetails" component={EventDetailsScreen} />
       <ScheduleStack.Screen name="scheduleCodeOfConduct" component={CodeOfConductScreen} />
     </ScheduleStack.Navigator>

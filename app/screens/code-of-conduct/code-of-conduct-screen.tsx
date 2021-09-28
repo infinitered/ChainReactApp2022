@@ -34,12 +34,6 @@ const twitter = "chainreactconf"
 const phoneNumber = "(360) 450-4752"
 
 export const CodeOfConductScreen = () => {
-  // static navigationOptions = ({ navigation, _ }) => ({
-  //   headerStyle: { backgroundColor: color.palette.portGore, borderBottomWidth: 0 },
-  //   headerBackImage: <BackButton backTitle={navigation.getParam("backTitle", "INFO")} />,
-  //   headerTintColor: color.palette.shamrock,
-  // })
-
   return (
     <Screen style={ROOT} preset="scroll" backgroundColor={palette.portGore}>
       <Text preset="header" tx="codeOfConductScreen.title" style={TITLE} />

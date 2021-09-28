@@ -4,6 +4,7 @@ import { RenderBreak } from "./render-break"
 import { RenderTalk } from "./render-talk"
 import { RenderAnnouncement } from "./render-announcement"
 import { RenderWorkshop } from "./render-workshop"
+import { RenderMeal } from "./render-meal"
 
 type RenderEventTypeProps = {
   event: Event
@@ -16,9 +17,8 @@ export const RenderEventType = ({ event }: RenderEventTypeProps) => {
       return <RenderWorkshop event={event} />
     case "break":
       return <RenderBreak event={event} />
-    // case "lunch":
-    // case "breakfast":
-    //   return <RenderLunch />
+    case "meal":
+      return <RenderMeal event={event} />
     // case "panel":
     //   return <RenderPanel />
     case "announcement":

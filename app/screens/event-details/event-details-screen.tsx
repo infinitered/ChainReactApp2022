@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { observer } from "mobx-react-lite"
 import {
   Alert,
@@ -21,8 +21,6 @@ const ROOT: ViewStyle = {
   paddingVertical: spacing.medium,
   paddingHorizontal: spacing.large,
 }
-
-const PANEL_BIO: ViewStyle = { flex: 1, marginTop: spacing.extraLarge + spacing.large }
 
 const AFTER_PARTY_DESCRIPTION: TextStyle = { marginTop: spacing.small }
 
@@ -79,8 +77,13 @@ export const EventDetailsScreen = observer(function EventDetailsScreen() {
   if (!currentEvent) {
     // render a fallback ... or navigate back
     Alert.alert("No current event set -- this is a bug!")
-    navigation.goBack()
+    navigation.navigate("schedule")
+    return null
   }
+
+  useEffect(() => {
+    navigation.setOptions({ title: currentEvent.screenTitle })
+  }, [currentEvent.screenTitle])
 
   return (
     <KeyboardAvoidingView

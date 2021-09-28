@@ -11,35 +11,37 @@ export const EventModel = types
   .model("Event")
   .props({
     id: types.identifier,
-    startTime: types.maybeNull(types.string),
-    endTime: types.maybeNull(types.string),
-    duration: types.maybeNull(types.string),
-    day: types.maybeNull(types.enumeration(DAYS)),
+    startTime: types.string,
+    endTime: types.string,
+    duration: types.string,
+    day: types.enumeration(DAYS),
+    shortTitle: types.maybeNull(types.string),
     title: types.maybeNull(types.string),
     description: types.maybeNull(types.string),
     image: types.maybeNull(types.string),
     speakers: types.array(types.reference(SpeakerModel)),
     menuItems: types.maybeNull(types.array(types.string)),
     sponsor: types.maybeNull(types.string),
-    eventType: types.maybeNull(
-      types.enumeration([
-        "talk",
-        "announcement",
-        "breakfast",
-        "lunch",
-        "workshop",
-        "welcome",
-        "goodbye",
-        "break",
-        "panel",
-        "afterparty",
-      ]),
-    ),
+    eventType: types.enumeration([
+      "talk",
+      "announcement",
+      "meal",
+      "workshop",
+      "welcome",
+      "goodbye",
+      "break",
+      "panel",
+      "afterparty",
+    ]),
     location: types.maybeNull(types.string),
     track: types.maybeNull(types.enumeration(["BEGINNER", "INTERMEDIATE", "ADVANCED"])),
     prerequisites: types.maybeNull(types.array(types.string)),
   })
-  .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
+  .views((event) => ({
+    get screenTitle() {
+      return event.shortTitle || event.title
+    },
+  })) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
 
 type EventType = Instance<typeof EventModel>
