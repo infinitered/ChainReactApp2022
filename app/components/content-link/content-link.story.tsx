@@ -1,7 +1,6 @@
 import * as React from "react"
 import { storiesOf } from "@storybook/react-native"
 import { StoryScreen, Story, UseCase } from "../../../storybook/views"
-import { color } from "../../theme"
 import { ContentLink } from "./content-link"
 
 storiesOf("ContentLink", module)
@@ -9,7 +8,12 @@ storiesOf("ContentLink", module)
   .add("Style Presets", () => (
     <Story>
       <UseCase text="Primary" usage="The primary.">
-        <ContentLink style={{ backgroundColor: color.error }} />
+        <ContentLink
+          onPressLink={() => {}}
+          headerTx="venueScreen.blog.title"
+          bodyTx="venueScreen.blog.description"
+          buttonTx="venueScreen.blog.button"
+        />
       </UseCase>
     </Story>
   ))

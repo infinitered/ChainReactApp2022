@@ -1,11 +1,13 @@
-import * as React from "react"
-import Mapbox from "@mapbox/react-native-mapbox-gl"
+import React, { FC } from "react"
+// import Mapbox from "@mapbox/react-native-mapbox-gl"
 import { Image, ImageStyle, TextStyle, TouchableOpacity, View, ViewStyle } from "react-native"
 import { Text } from "../text/text"
 import { color, getScreenWidth, HIT_SLOP, spacing } from "../../theme"
 import { RenderLink } from "./render-link"
 const CLOSE_ICON = require("./images/Close.png")
-
+const Mapbox = {
+  Callout: () => null,
+} as { Callout: FC }
 const CALLOUT_CONTAINER: ViewStyle = {
   alignItems: "center",
   justifyContent: "center",

@@ -19,7 +19,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { color, palette, spacing } from "../theme"
 import { TabIcon } from "../components"
 import { EventDetailsScreen } from "../screens/event-details/event-details-screen"
-import { BackButton } from "../components/back-button/back-button"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator

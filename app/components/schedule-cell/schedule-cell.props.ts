@@ -7,6 +7,6 @@ export interface ScheduleCellProps extends ViewProps {
   index: number
   event: Event
   preset?: ScheduleCellPresetNames
-  onPress: Function
+  onPress: (event: Event) => void
   noTime?: boolean
 }
