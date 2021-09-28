@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Linking, Platform, TextStyle, View, ViewStyle } from "react-native"
 import { Event } from "../../models"
-import { palette, spacing } from "../../theme"
+import { palette, spacing, textSizes } from "../../theme"
 import { BulletItem } from "../bullet-item/bullet-item"
 import { Text } from "../text/text"
 
@@ -16,7 +16,7 @@ const LABEL: TextStyle = {
 }
 
 const TITLE: TextStyle = {
-  fontSize: 24,
+  fontSize: textSizes.title,
 }
 
 function mapsURL(location: string): string {

@@ -10,6 +10,10 @@ export const spacing = {
   ginormous: 100,
 }
 
+export const textSizes = {
+  title: 24,
+}
+
 export const getScreenWidth = () => Dimensions.get("window").width
 export const getScreenHeight = () => Dimensions.get("window").height
 

@@ -56,7 +56,12 @@ export function SpeakerImage(props: SpeakerImageProps) {
       {image ? (
         <Image source={{ uri: image }} style={{ ...SPEAKER_IMAGE, ...imageDimensions }} />
       ) : (
-        <View style={{ ...imageDimensions }} />
+        // <View style={{ ...imageDimensions }} />
+        // TODO: Replace Kent with a generic placeholder image
+        <Image
+          source={require("./img.speaker.lg.png")}
+          style={{ ...SPEAKER_IMAGE, ...imageDimensions }}
+        />
       )}
       <View style={NAME}>
         <Text text={firstPart.toUpperCase()} preset="body" style={SPEAKER_NAME} />

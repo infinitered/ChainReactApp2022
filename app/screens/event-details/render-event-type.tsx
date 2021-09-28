@@ -2,6 +2,7 @@ import React from "react"
 import { Event } from "../../models"
 import { RenderBreak } from "./render-break"
 import { RenderTalk } from "./render-talk"
+import { RenderAnnouncement } from "./render-announcement"
 import { RenderWorkshop } from "./render-workshop"
 
 type RenderEventTypeProps = {
@@ -20,9 +21,8 @@ export const RenderEventType = ({ event }: RenderEventTypeProps) => {
     //   return <RenderLunch />
     // case "panel":
     //   return <RenderPanel />
-    // case "welcome":
-    // case "goodbye":
-    //   return <RenderWelcome />
+    case "announcement":
+      return <RenderAnnouncement event={event} />
     // case "afterparty":
     //   return <RenderAfterParty />
     default:
