@@ -46,6 +46,7 @@ export async function setupRootStore() {
         eventStore: {
           speakers: conf2022["speakers"] as SpeakerSnapshot[],
           events: conf2022["events"] as EventSnapshot[],
+          attractions: conf2022["attractions"] as any,
         },
       },
       env,

@@ -17,6 +17,7 @@ export const EventStoreModel = types
     status: types.optional(types.enumeration(["pending", "done", "error"]), "done"),
     updatedAt: types.maybe(types.Date),
     settings: types.optional(types.array(SettingModel), []),
+    attractions: types.frozen(),
   })
   .views((store) => ({
     eventsForDay(day: EVENT_DAYS) {
