@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { View, Text, TextStyle, ViewStyle } from "react-native"
 
 const ROOT: ViewStyle = { backgroundColor: "#eee" }

@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { Image, TextProps, TextStyle, View, ViewStyle } from "react-native"
 import { Text } from "../text/text"
 import { spacing } from "../../theme"
@@ -28,7 +28,11 @@ export const TravelOption = (props: TravelOptionProps) => {
   return (
     <View style={ROOT}>
       <Image source={presets[preset]} />
-      <Text preset="sectionHeader" tx={`venueScreen.gettingToChainReact.${preset}` as const} style={TEXT} />
+      <Text
+        preset="sectionHeader"
+        tx={`venueScreen.gettingToChainReact.${preset}` as const}
+        style={TEXT}
+      />
     </View>
   )
 }

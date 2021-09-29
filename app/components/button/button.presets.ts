@@ -1,19 +1,24 @@
-import { ViewStyle, TextStyle } from "react-native"
-import { color, spacing } from "../../theme"
+import { TextStyle, ViewStyle } from "react-native"
+import { color, palette, spacing } from "../../theme"
 
 /**
  * All text will start off looking like this.
  */
 const BASE_VIEW: ViewStyle = {
-  paddingVertical: spacing[2],
-  paddingHorizontal: spacing[2],
+  paddingVertical: spacing.medium,
+  paddingHorizontal: spacing.medium,
   borderRadius: 4,
   justifyContent: "center",
   alignItems: "center",
 }
 
+const DARK_BASE_VIEW: ViewStyle = {
+  backgroundColor: color.palette.vintageRock,
+  paddingVertical: spacing.small,
+}
+
 const BASE_TEXT: TextStyle = {
-  paddingHorizontal: spacing[3],
+  paddingHorizontal: spacing.large,
 }
 
 /**
@@ -21,31 +26,23 @@ const BASE_TEXT: TextStyle = {
  *
  * You want to customize these to whatever you need in your app.
  */
-export const viewPresets: Record<string, ViewStyle> = {
+export const viewPresets = {
   /**
-   * A smaller piece of secondard information.
+   * A smaller piece of secondary information.
    */
-  primary: { ...BASE_VIEW, backgroundColor: color.palette.orange } as ViewStyle,
-
-  /**
-   * A button without extras.
-   */
-  link: {
-    ...BASE_VIEW,
-    paddingHorizontal: 0,
-    paddingVertical: 0,
-    alignItems: "flex-start",
-  } as ViewStyle,
+  primary: { ...BASE_VIEW, backgroundColor: color.palette.crimson } as ViewStyle,
+  dark: { ...BASE_VIEW, ...DARK_BASE_VIEW } as ViewStyle,
+  link: {} as ViewStyle,
 }
 
-export const textPresets: Record<ButtonPresetNames, TextStyle> = {
+export const textPresets = {
   primary: { ...BASE_TEXT, fontSize: 9, color: color.palette.white } as TextStyle,
-  link: {
-    ...BASE_TEXT,
-    color: color.text,
-    paddingHorizontal: 0,
-    paddingVertical: 0,
+  dark: {
+    color: color.palette.shamrock,
+    fontSize: 14,
+    textAlign: "center",
   } as TextStyle,
+  link: { color: palette.shamrock } as TextStyle,
 }
 
 /**

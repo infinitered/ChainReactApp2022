@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { Linking, Platform, TextStyle, View, ViewStyle } from "react-native"
 import { Event } from "../../models"
 import { palette, spacing, textSizes } from "../../theme"

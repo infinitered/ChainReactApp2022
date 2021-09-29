@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { TextStyle, View, ViewProps, ViewStyle } from "react-native"
 import { Text } from "../text/text"
 import { Rating } from "./rating"

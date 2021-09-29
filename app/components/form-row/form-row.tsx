@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { View } from "react-native"
 import { PRESETS } from "./form-row.presets"
 import { FormRowProps } from "./form-row.props"

@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { TextStyle, ViewStyle } from "react-native"
 // import { BackButton } from "../../components/back-button"
 import { Contact } from "../../components/contact/contact"

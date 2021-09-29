@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { Image, ImageStyle, View, ViewStyle } from "react-native"
 
 const filled = require("./images/star.filled.png")

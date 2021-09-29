@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { storiesOf } from "@storybook/react-native"
 import { Story, StoryScreen, UseCase } from "../../../storybook/views"
 import { ScheduleCell } from "./schedule-cell"
@@ -50,7 +50,7 @@ const afterparty: any = {
 
 const noop = () =>
   void storiesOf("ScheduleCell", module)
-    .addDecorator(fn => <StoryScreen>{fn()}</StoryScreen>)
+    .addDecorator((fn) => <StoryScreen>{fn()}</StoryScreen>)
     .add("Presets", () => (
       <Story>
         <UseCase text="ScheduleCell" usage="odd" noPad>

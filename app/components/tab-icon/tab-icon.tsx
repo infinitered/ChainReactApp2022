@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { Image, ImageStyle } from "react-native"
 
 const ICON: ImageStyle = {

@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { storiesOf } from "@storybook/react-native"
 import { StoryScreen, Story, UseCase } from "../../../storybook/views"
 import { BackButton } from "./back-button"
@@ -8,7 +8,7 @@ storiesOf("BackButton", module)
   .add("Style Presets", () => (
     <Story>
       <UseCase text="Primary" usage="The primary.">
-        <BackButton backTitle='Title text' />
+        <BackButton backTitle="Title text" />
       </UseCase>
     </Story>
   ))

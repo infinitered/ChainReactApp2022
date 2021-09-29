@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { View, ViewStyle, Image, TextStyle, ImageStyle } from "react-native"
 import { Text } from "../text/text"
 import { palette, spacing } from "../../theme"

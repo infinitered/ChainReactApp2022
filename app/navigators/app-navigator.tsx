@@ -13,7 +13,13 @@ import {
   NavigatorScreenParams,
 } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { CodeOfConductScreen, ScheduleScreen, VenueScreen, WelcomeScreen } from "../screens"
+import {
+  CodeOfConductScreen,
+  InfoScreen,
+  ScheduleScreen,
+  VenueScreen,
+  WelcomeScreen,
+} from "../screens"
 import { navigationRef } from "./navigation-utilities"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { color, palette, spacing } from "../theme"
@@ -46,6 +52,7 @@ export type ScheduleNavigatorParamList = {
 export type TabNavigatorParamList = {
   schedule: NavigatorScreenParams<ScheduleNavigatorParamList>
   venue: undefined
+  info: undefined
 }
 
 declare global {
@@ -107,6 +114,7 @@ const MainTabs = () => {
     >
       <Tab.Screen name="schedule" component={Schedule} />
       <Tab.Screen name="venue" component={VenueScreen} />
+      <Tab.Screen name="info" component={InfoScreen} />
     </Tab.Navigator>
   )
 }

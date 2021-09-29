@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { Image, ImageStyle, Linking, TextStyle, View, ViewStyle } from "react-native"
 import { Text } from "../text/text"
 import { Button } from "../button/button"

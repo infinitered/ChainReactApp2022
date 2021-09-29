@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { ScrollView, View, ViewStyle } from "react-native"
 
 export interface StoryProps {

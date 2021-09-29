@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { Alert, Linking, TextStyle, TouchableOpacity, View, ViewStyle } from "react-native"
 import { spacing } from "../../theme"
 import { SocialButton } from "../social-button/social-button"
