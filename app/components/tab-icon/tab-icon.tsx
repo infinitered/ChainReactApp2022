@@ -9,7 +9,7 @@ const ICON: ImageStyle = {
   maxWidth: 24,
 }
 
-const TAB_ICONS: any = {
+const TAB_ICONS = {
   schedule: require("./icons/calendar.inactive.png"),
   scheduleActive: require("./icons/calendar.active.png"),
   venue: require("./icons/map.inactive.png"),
@@ -20,7 +20,12 @@ const TAB_ICONS: any = {
   profileActive: require("./icons/profile.active.png"),
 }
 
-export const TabIcon = ({ routeName, focused }) => {
+interface Props {
+  focused?: boolean
+  routeName: keyof typeof TAB_ICONS
+}
+
+export const TabIcon = ({ routeName, focused }: Props) => {
   const tabName = focused ? `${routeName}Active` : routeName
 
   return <Image style={ICON} source={TAB_ICONS[tabName]} />

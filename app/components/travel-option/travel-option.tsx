@@ -28,7 +28,7 @@ export const TravelOption = (props: TravelOptionProps) => {
   return (
     <View style={ROOT}>
       <Image source={presets[preset]} />
-      <Text preset="sectionHeader" tx={`venueScreen.gettingToChainReact.${preset}`} style={TEXT} />
+      <Text preset="sectionHeader" tx={`venueScreen.gettingToChainReact.${preset}` as const} style={TEXT} />
     </View>
   )
 }

@@ -1,11 +1,8 @@
 import React from "react"
-import { isFriday, isThursday } from "date-fns"
-import { convertToTimeZone } from "date-fns-timezone"
 import { TextStyle, View } from "react-native"
 import { Text } from "../../components"
-import { Event, EventStore, EVENT_DAYS } from "../../models"
+import { EventStore, EVENT_DAYS } from "../../models"
 import { color, spacing } from "../../theme"
-import { TIMEZONE } from "../../utils/info"
 import { RenderEvent } from "./render-event"
 
 const SUBTITLE: TextStyle = {
@@ -31,12 +28,20 @@ export const ScheduleContent = ({ eventStore, selected }: ScheduleContentProps) 
   return (
     <View>
       <Text
-        tx={`scheduleScreen.${selected === "thursday" ? "day1" : "day2"}`}
+        tx={
+          `scheduleScreen.${selected === "thursday" ? "day1" : "day2"}` as
+            | "scheduleScreen.day1"
+            | "scheduleScreen.day2"
+        }
         style={SUBTITLE}
         preset="subheader"
       />
       <Text
-        tx={`scheduleScreen.${selected === "thursday" ? "day1" : "day2"}Date`}
+        tx={
+          `scheduleScreen.${selected === "thursday" ? "day1" : "day2"}Date` as
+            | "scheduleScreen.day1Date"
+            | "scheduleScreen.day2Date"
+        }
         style={DATE}
         preset="label"
       />

@@ -58,7 +58,7 @@ export function SpeakerBio(props: SpeakerBioProps) {
     medium,
     instagram,
     dribbble,
-    websites: websites || [],
+    websites: websites || ([] as string[]),
   }
   const widthStyles = {
     maxWidth: getScreenWidth() - 2 * spacing.large,
