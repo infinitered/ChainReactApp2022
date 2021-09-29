@@ -1,7 +1,6 @@
 import * as React from "react"
 import { storiesOf } from "@storybook/react-native"
 import { StoryScreen, Story, UseCase } from "../../../storybook/views"
-import { color } from "../../theme"
 import { BackButton } from "./back-button"
 
 storiesOf("BackButton", module)
@@ -9,7 +8,7 @@ storiesOf("BackButton", module)
   .add("Style Presets", () => (
     <Story>
       <UseCase text="Primary" usage="The primary.">
-        <BackButton style={{ backgroundColor: color.error }} />
+        <BackButton backTitle='Title text' />
       </UseCase>
     </Story>
   ))

@@ -54,19 +54,19 @@ const noop = () =>
     .add("Presets", () => (
       <Story>
         <UseCase text="ScheduleCell" usage="odd" noPad>
-          <ScheduleCell index={0} talk={talk} onPress={noop} />
+          <ScheduleCell index={0} event={talk} onPress={noop} />
         </UseCase>
         <UseCase text="ScheduleCell" usage="even" noPad>
-          <ScheduleCell index={1} talk={talk} onPress={noop} />
+          <ScheduleCell index={1} event={talk} onPress={noop} />
         </UseCase>
         <UseCase text="ScheduleCell" usage="break" noPad>
-          <ScheduleCell index={0} talk={breakTalk} preset="break" onPress={noop} />
+          <ScheduleCell index={0} event={breakTalk} preset="break" onPress={noop} />
         </UseCase>
         <UseCase text="ScheduleCell" usage="workshop" noPad>
-          <ScheduleCell index={0} talk={workshop} onPress={noop} />
+          <ScheduleCell index={0} event={workshop} onPress={noop} />
         </UseCase>
         <UseCase text="ScheduleCell" usage="afterparty" noPad>
-          <ScheduleCell index={0} talk={afterparty} preset="afterparty" onPress={noop} />
+          <ScheduleCell index={0} event={afterparty} preset="afterparty" onPress={noop} />
         </UseCase>
       </Story>
     ))
