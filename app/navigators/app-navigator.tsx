@@ -49,6 +49,11 @@ export type ScheduleNavigatorParamList = {
   scheduleCodeOfConduct: undefined
 }
 
+export type InfoNavigatorParamList = {
+  infoScreen: undefined
+  infoCodeOfConduct: undefined
+}
+
 export type TabNavigatorParamList = {
   schedule: NavigatorScreenParams<ScheduleNavigatorParamList>
   venue: undefined
@@ -65,6 +70,7 @@ declare global {
     interface RootParamList
       extends NavigatorParamList,
         ScheduleNavigatorParamList,
+        InfoNavigatorParamList,
         TabNavigatorParamList {}
   }
 }
@@ -75,6 +81,7 @@ interface NavigationProps extends Partial<React.ComponentProps<typeof Navigation
 const Stack = createNativeStackNavigator<NavigatorParamList>()
 const Tab = createBottomTabNavigator<TabNavigatorParamList>()
 const ScheduleStack = createNativeStackNavigator<ScheduleNavigatorParamList>()
+const InfoStack = createNativeStackNavigator<InfoNavigatorParamList>()
 
 const Schedule = () => {
   return (
@@ -97,6 +104,20 @@ const Schedule = () => {
   )
 }
 
+const Info = () => {
+  return (
+    <InfoStack.Navigator
+      screenOptions={{
+        headerTintColor: color.palette.shamrock,
+        headerStyle: { backgroundColor: color.palette.portGore },
+      }}
+    >
+      <InfoStack.Screen name="infoScreen" component={InfoScreen} />
+      <InfoStack.Screen name="infoCodeOfConduct" component={CodeOfConductScreen} />
+    </InfoStack.Navigator>
+  )
+}
+
 const MainTabs = () => {
   return (
     <Tab.Navigator
@@ -114,7 +135,7 @@ const MainTabs = () => {
     >
       <Tab.Screen name="schedule" component={Schedule} />
       <Tab.Screen name="venue" component={VenueScreen} />
-      <Tab.Screen name="info" component={InfoScreen} />
+      <Tab.Screen name="info" component={Info} />
     </Tab.Navigator>
   )
 }

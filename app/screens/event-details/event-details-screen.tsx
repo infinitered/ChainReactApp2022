@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { observer } from "mobx-react-lite"
-import { Alert, KeyboardAvoidingView, Platform, ViewStyle } from "react-native"
-import { Screen } from "../../components"
+import { Alert, KeyboardAvoidingView, Platform, View, ViewStyle } from "react-native"
+import { Button, Screen, Text } from "../../components"
 import { palette, spacing } from "../../theme"
 import { useStores } from "../../models"
 import { useNavigation } from "@react-navigation/core"
@@ -12,6 +12,24 @@ const ROOT: ViewStyle = {
   paddingHorizontal: spacing.large,
 }
 const MAIN_CONTAINER: ViewStyle = { flex: 1, backgroundColor: palette.portGore }
+const CODE_OF_CONDUCT_LINK_WRAP: ViewStyle = {
+  flexDirection: "row",
+  alignItems: "center",
+}
+const CODE_OF_CONDUCT_LINK: ViewStyle = {
+  paddingHorizontal: spacing.large,
+  paddingVertical: spacing.medium,
+  borderTopWidth: 1,
+  borderColor: "rgba(255, 255, 255, .1)",
+}
+
+type CodeOfConductLinkProps = { style?: ViewStyle; onPress: () => void }
+const CodeOfConductLink = (props: CodeOfConductLinkProps) => (
+  <View style={{ ...CODE_OF_CONDUCT_LINK_WRAP, ...props.style }}>
+    <Text tx="codeOfConductLink.pleaseRemember" />
+    <Button preset="link" tx="codeOfConductLink.codeOfConduct" onPress={props.onPress} />
+  </View>
+)
 
 export const EventDetailsScreen = observer(function EventDetailsScreen() {
   const { eventStore } = useStores()
@@ -35,7 +53,10 @@ export const EventDetailsScreen = observer(function EventDetailsScreen() {
       behavior={Platform.OS === "ios" ? "padding" : null}
       keyboardVerticalOffset={88}
     >
-      {/* <CodeOfConductLink onPress={this.linkToCodeOfConduct} style={CODE_OF_CONDUCT_LINK} /> */}
+      <CodeOfConductLink
+        onPress={() => navigation.navigate("scheduleCodeOfConduct")}
+        style={CODE_OF_CONDUCT_LINK}
+      />
 
       <Screen preset="scroll" backgroundColor={palette.portGore} style={ROOT}>
         <RenderEventType event={currentEvent} />

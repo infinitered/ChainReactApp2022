@@ -1,4 +1,5 @@
-import React from "react"
+import { useNavigation } from "@react-navigation/core"
+import React, { useEffect } from "react"
 import { TextStyle, ViewStyle } from "react-native"
 // import { BackButton } from "../../components/back-button"
 import { Contact } from "../../components/contact/contact"
@@ -34,6 +35,12 @@ const twitter = "chainreactconf"
 const phoneNumber = "(360) 450-4752"
 
 export const CodeOfConductScreen = () => {
+  const navigation = useNavigation()
+
+  useEffect(() => {
+    navigation.setOptions({ title: "Code of Conduct" })
+  }, [navigation])
+
   return (
     <Screen style={ROOT} preset="scroll" backgroundColor={palette.portGore}>
       <Text preset="header" tx="codeOfConductScreen.title" style={TITLE} />

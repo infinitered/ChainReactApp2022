@@ -29,7 +29,7 @@ export const InfoScreen = () => {
     <Screen preset="scrollStack" backgroundColor={palette.portGore}>
       <Text preset="title" tx="infoScreen.title" style={TITLE} />
       <WiFi />
-      <Conduct onPress={() => navigation.navigate("codeOfConduct")} />
+      <Conduct onPress={() => navigation.navigate("infoCodeOfConduct")} />
       <SurveyLink />
       {renderFullContent ? <Sponsors /> : null}
       <PresentedBy />

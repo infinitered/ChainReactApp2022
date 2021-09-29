@@ -22,21 +22,8 @@
   "welcomeScreen": {
     "header1": "Welcome to",
     "header2": "Chain React 2022",
-    "subtitle": "Use our app to to view the schedule, explore the city, and access need-to-know details! You can even chat with others about each talk, right here in the app!",
+    "subtitle": "Use our app to to view the schedule, explore the city, and access need-to-know details! ",
     "nextScreenButton": "I'm Ready!"
-  },
-  "profileScreen": {
-    "title": "Profile",
-    "description": "Thanks to AWS AppSync, you can discuss each talk with your fellow attendees, right here in the app! Change your username to whatever suits you and get chatting!",
-    "usernameField": {
-      "label": "USERNAME",
-      "placeholder": "USERNAME"
-    },
-    "disabled": {
-      "warning": "The discussions feature is unavailable at this time."
-    },
-    "pleaseRemember": "Please remember our",
-    "codeOfConduct": " Code of Conduct"
   },
   "scheduleScreen": {
     "title": "Schedule",
