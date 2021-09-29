@@ -6,11 +6,12 @@
  */
 import React, { useState, useRef } from "react"
 // import Mapbox from "@mapbox/react-native-mapbox-gl"
-import { TouchableWithoutFeedback, View, ViewStyle } from "react-native"
+import { TextStyle, TouchableWithoutFeedback, View, ViewStyle } from "react-native"
 import { AttractionsMapCallout } from "./attractions-map-callout"
 import { color, getScreenHeight, getScreenWidth } from "../../theme"
 import { unnest } from "ramda"
 import { useStores } from "../../models"
+import { Text } from ".."
 
 // Mapbox.setAccessToken(
 //   "pk.eyJ1Ijoiamh1c2tleSIsImEiOiJjamFicHEyYmowMmh4MzNwbGJsMHFmNHhoIn0._2iDBeHi7lUMHWUEdTFrqA",
@@ -20,6 +21,7 @@ const MAPVIEW: ViewStyle = {
   height: 506,
   flex: 1,
   overflow: "hidden",
+  justifyContent: "center",
 }
 
 const HIDDEN_MARKER: ViewStyle = { backgroundColor: color.transparent }
@@ -27,6 +29,8 @@ const HIDDEN_MARKER: ViewStyle = { backgroundColor: color.transparent }
 const VENUE_MARKER: ViewStyle = { width: 41, height: 66 }
 
 const ATTRACTION_MARKER: ViewStyle = { width: 18, height: 32 }
+
+const TEMP_TEXT: TextStyle = { textAlign: "center", fontWeight: "bold", fontSize: 22 }
 
 export const AttractionsMap = () => {
   const mapViewRef = useRef(undefined)
@@ -43,7 +47,9 @@ export const AttractionsMap = () => {
   const size = { width: getScreenWidth(), maxHeight: getScreenHeight() * 0.8 }
   const styleUrl: any = "mapbox://styles/jhuskey/cjabpqolp3lf02so534xe4q9g"
   return (
-    <View style={{ ...MAPVIEW, ...size }}></View>
+    <View style={{ ...MAPVIEW, ...size, backgroundColor: "#fc1fbe" }}>
+      <Text style={TEMP_TEXT}>TODO: Replace with map</Text>
+    </View>
     // <Mapbox.MapView
     //   ref={mapViewRef}
     //   centerCoordinate={attractions.locations[0].geometry.coordinates}
