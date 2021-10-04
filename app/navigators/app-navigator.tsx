@@ -6,6 +6,7 @@
  */
 import React from "react"
 import { useColorScheme } from "react-native"
+import { useSafeAreaInsets } from "react-native-safe-area-context"
 import {
   NavigationContainer,
   DefaultTheme,
@@ -119,6 +120,8 @@ const Info = () => {
 }
 
 const MainTabs = () => {
+  const { bottom } = useSafeAreaInsets()
+
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -126,8 +129,9 @@ const MainTabs = () => {
         headerShown: false,
         tabBarStyle: {
           backgroundColor: color.tabbar,
-          height: 75,
-          paddingVertical: spacing.tiny,
+          height: 55 + bottom,
+          paddingTop: spacing.tiny,
+          paddingBottom: bottom + spacing.tiny,
         },
         tabBarActiveTintColor: palette.white,
       })}
