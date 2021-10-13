@@ -27,8 +27,6 @@ export const EventModel = types
       "announcement",
       "meal",
       "workshop",
-      "welcome",
-      "goodbye",
       "break",
       "panel",
       "afterparty",

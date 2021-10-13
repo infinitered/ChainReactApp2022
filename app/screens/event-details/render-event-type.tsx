@@ -7,6 +7,7 @@ import { RenderWorkshop } from "./render-workshop"
 import { RenderMeal } from "./render-meal"
 import { RenderAfterParty } from "./render-after-party"
 import { RenderPanel } from "./render-panel"
+import { RenderDefaultEvent } from "./render-default-event"
 
 type RenderEventTypeProps = {
   event: Event
@@ -28,6 +29,6 @@ export const RenderEventType = ({ event }: RenderEventTypeProps) => {
     case "afterparty":
       return <RenderAfterParty event={event} />
     default:
-      return null
+      return <RenderDefaultEvent event={event} />
   }
 }
