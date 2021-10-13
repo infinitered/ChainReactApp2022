@@ -113,7 +113,7 @@ const Info = () => {
         headerStyle: { backgroundColor: color.palette.portGore },
       }}
     >
-      <InfoStack.Screen name="infoScreen" component={InfoScreen} />
+      <InfoStack.Screen name="infoScreen" component={InfoScreen} options={{ headerShown: false }} />
       <InfoStack.Screen name="infoCodeOfConduct" component={CodeOfConductScreen} />
     </InfoStack.Navigator>
   )

@@ -45,7 +45,7 @@ export const EventDetailsScreen = observer(function EventDetailsScreen() {
 
   useEffect(() => {
     navigation.setOptions({ title: currentEvent.screenTitle })
-  }, [currentEvent.screenTitle])
+  }, [currentEvent.screenTitle, navigation])
 
   return (
     <KeyboardAvoidingView

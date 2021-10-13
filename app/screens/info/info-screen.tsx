@@ -23,7 +23,9 @@ export const InfoScreen = () => {
     requestAnimationFrame(() => {
       setRenderFullContent(true)
     })
-  }, [])
+
+    navigation.setOptions({ title: "Info" })
+  }, [navigation])
 
   return (
     <Screen preset="scrollStack" backgroundColor={palette.portGore}>
