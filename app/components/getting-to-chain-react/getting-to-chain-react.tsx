@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import { Image, ImageStyle, Linking, TextStyle, View, ViewStyle } from "react-native"
+import LottieView from "lottie-react-native"
 import { Text } from "../text/text"
 import { Button } from "../button/button"
 import { palette, spacing } from "../../theme"
@@ -61,10 +62,25 @@ const UBER_LINK =
 const PARKING_LINK = "https://www.pcs.org/inside-pcs/directions#Parking"
 
 export const GettingToChainReact = () => {
+  const lottieAnimationRef = useRef(null)
+
+  useEffect(() => {
+    lottieAnimationRef.current.play()
+    return () => lottieAnimationRef.current.reset()
+  }, [])
+
   return (
     <View style={ROOT}>
       <Text preset="header" tx="venueScreen.gettingToChainReact.title1" />
       <Text preset="header" tx="venueScreen.gettingToChainReact.title2" style={TITLE_GRAY} />
+      <LottieView
+        ref={lottieAnimationRef}
+        style={{
+          width: "100%",
+          marginTop: spacing.medium,
+        }}
+        source={require("./animations/scooter-halloween.json")}
+      />
       <Text preset="sectionHeader" tx="venueScreen.gettingToChainReact.subtitle" style={SUBTITLE} />
       <Text preset="body" tx="venueScreen.gettingToChainReact.description1" style={DESCRIPTION} />
       <Text preset="body" tx="venueScreen.gettingToChainReact.description2" style={DESCRIPTION} />
