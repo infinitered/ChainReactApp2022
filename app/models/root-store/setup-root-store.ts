@@ -52,7 +52,10 @@ export async function setupRootStore() {
       env,
     )
   } catch (e) {
-    __DEV__ && console.tron.error(e.message, null)
+    if (__DEV__) {
+      console.tron.logImportant("Helllllooo")
+      console.tron.error(e.message, null)
+    }
   }
   // but please inform us what happened
   // __DEV__ && console.tron.error(e.message, null)

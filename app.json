@@ -2,22 +2,32 @@
   "expo": {
     "name": "ChainReactApp2022",
     "slug": "ChainReactApp2022",
-    "version": "1.0.0",
+    "owner": "infinitered",
+    "version": "2022.0.1",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "backgroundColor": "#171539",
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#171539"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
+    "android": {
+      "icon": "./assets/images/icon.png",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "icon": "./assets/images/icon-ios.png",
+      "splash": {
+        "tabletImage": "./assets/images/splash-tablet-portrait.png"
+      }
     },
     "web": {
       "favicon": "./assets/images/favicon.png"

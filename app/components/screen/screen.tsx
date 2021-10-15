@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useRef } from "react"
 import { KeyboardAvoidingView, Platform, ScrollView, StatusBar, View } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
+import { useScrollToTop } from "@react-navigation/native"
 import { ScreenProps } from "./screen.props"
 import { isNonScrolling, offsets, presets } from "./screen.presets"
 import { AutoImage as Image } from "../"
@@ -34,6 +35,8 @@ function ScreenWithoutScrolling(props: ScreenProps) {
 }
 
 function ScreenWithScrolling(props: ScreenProps) {
+  const screenRef = useRef(null)
+  useScrollToTop(screenRef)
   const insets = useSafeAreaInsets()
   const preset = presets.scroll
   const style = props.style || {}
@@ -49,6 +52,7 @@ function ScreenWithScrolling(props: ScreenProps) {
       <StatusBar barStyle={props.statusBar || "light-content"} />
       <View style={[preset.outer, backgroundStyle, insetStyle]}>
         <ScrollView
+          ref={screenRef}
           style={[preset.outer, backgroundStyle]}
           contentContainerStyle={[preset.inner, style]}
           keyboardShouldPersistTaps={props.keyboardShouldPersistTaps || "handled"}
