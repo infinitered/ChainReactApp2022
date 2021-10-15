@@ -14,20 +14,24 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "android": {
       "icon": "./assets/images/icon.png",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.chainreactapp"
     },
     "ios": {
       "supportsTablet": true,
       "icon": "./assets/images/icon-ios.png",
       "splash": {
         "tabletImage": "./assets/images/splash-tablet-portrait.png"
-      }
+      },
+      "bundleIdentifier": "com.chainreactapp"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
