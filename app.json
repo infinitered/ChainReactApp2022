@@ -31,7 +31,7 @@
       "splash": {
         "tabletImage": "./assets/images/splash-tablet-portrait.png"
       },
-      "bundleIdentifier": "com.chainreactapp"
+      "bundleIdentifier": "infinitered.stage.ChainReactConf"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"

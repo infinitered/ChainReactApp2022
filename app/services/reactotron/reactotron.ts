@@ -126,6 +126,7 @@ export class Reactotron {
         }
         Tron.useReactNative({
           asyncStorage: this.config.useAsyncStorage ? undefined : false,
+          storybook: true,
         })
       }
 
