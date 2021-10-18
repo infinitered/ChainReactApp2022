@@ -3,9 +3,10 @@ import { useNavigation } from "@react-navigation/core"
 import { ScheduleCell } from "../../components"
 import { ScheduleCellPresetNames } from "../../components/schedule-cell/schedule-cell.presets"
 import { Event, useStores } from "../../models"
+import { observer } from "mobx-react-lite"
 
 type RenderEventProps = { event: Event; index: number }
-export const RenderEvent = ({ event, index }: RenderEventProps) => {
+export const RenderEvent = observer(({ event, index }: RenderEventProps) => {
   const navigation = useNavigation()
   const { eventStore } = useStores()
 
@@ -25,4 +26,4 @@ export const RenderEvent = ({ event, index }: RenderEventProps) => {
       key={index}
     />
   )
-}
+})

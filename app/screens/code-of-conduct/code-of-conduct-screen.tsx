@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/core"
-import React, { useEffect } from "react"
+import React, { useLayoutEffect } from "react"
 import { TextStyle, ViewStyle } from "react-native"
 // import { BackButton } from "../../components/back-button"
 import { Contact } from "../../components/contact/contact"
@@ -37,7 +37,7 @@ const phoneNumber = "(360) 450-4752"
 export const CodeOfConductScreen = () => {
   const navigation = useNavigation()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     navigation.setOptions({ title: "Code of Conduct" })
   }, [navigation])
 

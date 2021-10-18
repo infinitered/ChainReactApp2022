@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useLayoutEffect } from "react"
 import { observer } from "mobx-react-lite"
-import { RefreshControl, ScrollView, TextStyle, ViewStyle } from "react-native"
+import { RefreshControl, ScrollView, TextStyle, View, ViewStyle } from "react-native"
 import { ScheduleNav, Screen, Text } from "../../components"
-import { color, spacing } from "../../theme"
+import { color, palette, spacing } from "../../theme"
 import { EVENT_DAYS, useStores } from "../../models"
 import { isFriday, isThursday } from "date-fns"
 import { ScheduleWorkshops } from "./schedule-workshops"
@@ -19,7 +19,35 @@ const TITLE: TextStyle = {
   paddingHorizontal: spacing.large,
 }
 
-export const ScheduleScreen = observer(function ScheduleScreen() {
+const ERROR: ViewStyle = {
+  paddingHorizontal: spacing.large,
+  paddingVertical: spacing.small,
+  backgroundColor: palette.ebony,
+}
+
+const ERROR_TITLE: TextStyle = {
+  fontWeight: "bold",
+  color: palette.angry,
+}
+
+const ERROR_MESSAGE: TextStyle = {
+  color: palette.waterloo,
+}
+
+const EventError = observer(() => {
+  const { eventStore } = useStores()
+
+  if (eventStore.status !== "error") return null
+
+  return (
+    <View style={ERROR}>
+      <Text style={ERROR_TITLE} tx="scheduleScreen.errorFetching" />
+      <Text style={ERROR_MESSAGE} text={eventStore.errorMessage} />
+    </View>
+  )
+})
+
+export const ScheduleScreen = function ScheduleScreen() {
   // Pull in one of our MST stores
   const { eventStore } = useStores()
 
@@ -28,12 +56,12 @@ export const ScheduleScreen = observer(function ScheduleScreen() {
 
   async function refreshData() {
     setRefreshing(true)
-    await eventStore.getAll()
+    await eventStore.refresh()
     setRefreshing(false)
   }
 
-  useEffect(() => {
-    refreshData()
+  useLayoutEffect(() => {
+    eventStore.refresh()
   }, [])
 
   return (
@@ -41,9 +69,12 @@ export const ScheduleScreen = observer(function ScheduleScreen() {
       <ScrollView
         style={{ flex: 1, width: "100%" }}
         key={`${selected}-scrollview`}
-        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={refreshData} />}
+        refreshControl={
+          <RefreshControl tintColor="#FFFFFF" refreshing={refreshing} onRefresh={refreshData} />
+        }
       >
         <Text preset="title" tx="scheduleScreen.title" style={TITLE} />
+        <EventError />
         {selected === "wednesday" ? (
           <ScheduleWorkshops />
         ) : (
@@ -53,7 +84,7 @@ export const ScheduleScreen = observer(function ScheduleScreen() {
       <ScheduleNav selected={selected} onSelected={(sel) => setSelected(sel)} />
     </Screen>
   )
-})
+}
 
 const getSelectedDay = (): EVENT_DAYS => {
   const date = new Date()

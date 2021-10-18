@@ -42,7 +42,7 @@ function App() {
   // Kick off initial async loading actions, like loading fonts and RootStore
   useEffect(() => {
     ;(async () => {
-      await initFonts() // expo
+      await initFonts() // expo fonts
       setupRootStore().then(setRootStore)
     })()
   }, [])

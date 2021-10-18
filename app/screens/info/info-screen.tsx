@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useLayoutEffect } from "react"
 import { TextStyle } from "react-native"
 import { Text } from "../../components/text/text"
 import { Screen } from "../../components/screen/screen"
@@ -19,7 +19,7 @@ export const InfoScreen = () => {
   const [renderFullContent, setRenderFullContent] = useState(false)
   const navigation = useNavigation()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     requestAnimationFrame(() => {
       setRenderFullContent(true)
     })

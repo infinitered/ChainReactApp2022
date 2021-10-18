@@ -4,6 +4,7 @@ import { TextStyle, View } from "react-native"
 import { ScheduleCell, Text } from "../../components"
 import { color, spacing } from "../../theme"
 import { Event, useStores } from "../../models"
+import { observer } from "mobx-react-lite"
 
 const SUBTITLE: TextStyle = {
   color: color.palette.white,
@@ -18,7 +19,7 @@ const DATE: TextStyle = {
   marginBottom: spacing.small + spacing.large,
 }
 
-export const ScheduleWorkshops = () => {
+export const ScheduleWorkshops = observer(() => {
   const { eventStore } = useStores()
   const navigation = useNavigation()
 
@@ -47,4 +48,4 @@ export const ScheduleWorkshops = () => {
       />
     </View>
   )
-}
+})

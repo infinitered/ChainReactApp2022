@@ -13,6 +13,9 @@ export const RootStoreModel = types
     ),
   })
   .actions((root) => ({
+    async refresh() {
+      return root.eventStore.refresh()
+    },
     reset() {
       // Need to properly reset everything here
       // root.eventStore = EventStoreModel.create({})

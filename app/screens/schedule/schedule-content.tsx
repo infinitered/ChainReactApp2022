@@ -1,3 +1,4 @@
+import { observer } from "mobx-react-lite"
 import React from "react"
 import { TextStyle, View } from "react-native"
 import { Text } from "../../components"
@@ -22,7 +23,7 @@ type ScheduleContentProps = {
   eventStore: EventStore
   selected: EVENT_DAYS
 }
-export const ScheduleContent = ({ eventStore, selected }: ScheduleContentProps) => {
+export const ScheduleContent = observer(({ eventStore, selected }: ScheduleContentProps) => {
   const selectedEvents = eventStore.eventsForDay(selected || "wednesday")
 
   return (
@@ -51,4 +52,4 @@ export const ScheduleContent = ({ eventStore, selected }: ScheduleContentProps) 
         ))}
     </View>
   )
-}
+})

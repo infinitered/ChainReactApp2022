@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useLayoutEffect } from "react"
 import { observer } from "mobx-react-lite"
 import { Alert, KeyboardAvoidingView, Platform, View, ViewStyle } from "react-native"
 import { Button, Screen, Text } from "../../components"
@@ -43,7 +43,7 @@ export const EventDetailsScreen = observer(function EventDetailsScreen() {
     return null
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     navigation.setOptions({ title: currentEvent.screenTitle })
   }, [currentEvent.screenTitle, navigation])
 

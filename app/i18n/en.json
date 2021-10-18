@@ -37,7 +37,8 @@
     "day1": "CONFERENCE DAY 1",
     "day1Date": "Thu, July 11",
     "day2": "CONFERENCE DAY 2",
-    "day2Date": "Fri, July 12"
+    "day2Date": "Fri, July 12",
+    "errorFetching": "Couldn't retrieve updated schedule!"
   },
   "talkDetailsScreen": {
     "workshop": "WORKSHOP",
