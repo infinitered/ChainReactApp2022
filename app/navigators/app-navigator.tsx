@@ -8,12 +8,14 @@ import React from "react"
 import { useColorScheme } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import {
-  NavigationContainer,
-  DefaultTheme,
   DarkTheme,
+  DefaultTheme,
+  NavigationContainer,
   NavigatorScreenParams,
 } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
+import { NavigationContainerProps } from "@react-navigation/core"
 import {
   CodeOfConductScreen,
   InfoScreen,
@@ -22,7 +24,6 @@ import {
   WelcomeScreen,
 } from "../screens"
 import { navigationRef } from "./navigation-utilities"
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { color, palette, spacing } from "../theme"
 import { TabIcon } from "../components"
 import { EventDetailsScreen } from "../screens/event-details/event-details-screen"
@@ -75,8 +76,6 @@ declare global {
         TabNavigatorParamList {}
   }
 }
-
-interface NavigationProps extends Partial<React.ComponentProps<typeof NavigationContainer>> {}
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
 const Stack = createNativeStackNavigator<NavigatorParamList>()
@@ -144,12 +143,12 @@ const MainTabs = () => {
   )
 }
 
-export const AppNavigator = (props: NavigationProps) => {
+export const AppNavigator = (props: Partial<NavigationContainerProps>) => {
   const colorScheme = useColorScheme()
 
   return (
     <NavigationContainer
-      ref={navigationRef as any} // TODO: fix ref typings (someone want to submit a PR?)
+      ref={navigationRef}
       theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
       {...props}
     >
