@@ -123,6 +123,7 @@ const MainTabs = () => {
 
   return (
     <Tab.Navigator
+      sceneContainerStyle={{ backgroundColor: palette.portGore }}
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused }) => <TabIcon routeName={route.name} focused={focused} />,
         headerShown: false,
