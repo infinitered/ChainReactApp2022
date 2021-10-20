@@ -14,9 +14,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "android": {
       "icon": "./assets/images/icon.png",
       "adaptiveIcon": {
@@ -31,7 +29,7 @@
       "splash": {
         "tabletImage": "./assets/images/splash-tablet-portrait.png"
       },
-      "bundleIdentifier": "com.chainreactapp"
+      "bundleIdentifier": "infinitered.stage.ChainReactConf"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
