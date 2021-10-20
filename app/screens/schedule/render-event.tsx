@@ -13,7 +13,7 @@ export const RenderEvent = observer(({ event, index }: RenderEventProps) => {
   const eventType = event.eventType.toLowerCase()
   const cellPreset: ScheduleCellPresetNames =
     eventType === "break" || eventType === "afterparty" ? eventType : "default"
-  console.log("this is a event item::::::: ", event)
+
   return (
     <ScheduleCell
       index={index}
