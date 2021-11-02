@@ -479,12 +479,12 @@ exports[`Storyshots Button Style Presets 1`] = `
               style={
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#EC174F",
                   "borderRadius": 4,
                   "justifyContent": "center",
                   "opacity": 1,
-                  "paddingHorizontal": undefined,
-                  "paddingVertical": undefined,
+                  "paddingHorizontal": 14,
+                  "paddingVertical": 14,
                 }
               }
             >
@@ -500,7 +500,7 @@ exports[`Storyshots Button Style Presets 1`] = `
                       Object {
                         "color": "#ffffff",
                         "fontSize": 9,
-                        "paddingHorizontal": undefined,
+                        "paddingHorizontal": 20,
                       },
                       undefined,
                     ],
@@ -603,12 +603,12 @@ exports[`Storyshots Button Style Presets 1`] = `
               style={
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#EC174F",
                   "borderRadius": 4,
                   "justifyContent": "center",
                   "opacity": 1,
-                  "paddingHorizontal": undefined,
-                  "paddingVertical": undefined,
+                  "paddingHorizontal": 14,
+                  "paddingVertical": 14,
                 }
               }
             >
@@ -624,7 +624,7 @@ exports[`Storyshots Button Style Presets 1`] = `
                       Object {
                         "color": "#ffffff",
                         "fontSize": 9,
-                        "paddingHorizontal": undefined,
+                        "paddingHorizontal": 20,
                       },
                       undefined,
                     ],
@@ -727,11 +727,11 @@ exports[`Storyshots Button Style Presets 1`] = `
               style={
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#EC174F",
                   "borderRadius": 0,
                   "justifyContent": "center",
                   "opacity": 1,
-                  "paddingHorizontal": undefined,
+                  "paddingHorizontal": 14,
                   "paddingVertical": 100,
                 }
               }
@@ -748,7 +748,7 @@ exports[`Storyshots Button Style Presets 1`] = `
                       Object {
                         "color": "#ffffff",
                         "fontSize": 9,
-                        "paddingHorizontal": undefined,
+                        "paddingHorizontal": 20,
                       },
                       Array [
                         Object {
@@ -3468,7 +3468,7 @@ exports[`Storyshots Header Behavior 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#161637",
                   "flex": 1,
                 }
               }
@@ -3615,7 +3615,7 @@ exports[`Storyshots Header Behavior 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#161637",
                   "flex": 1,
                 }
               }
@@ -3647,12 +3647,7 @@ exports[`Storyshots Header Behavior 1`] = `
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "alignItems": "flex-start",
-                      "borderRadius": 4,
-                      "justifyContent": "center",
                       "opacity": 1,
-                      "paddingHorizontal": 0,
-                      "paddingVertical": 0,
                     }
                   }
                 >
@@ -3801,7 +3796,7 @@ exports[`Storyshots Header Behavior 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#161637",
                   "flex": 1,
                 }
               }
@@ -3868,12 +3863,7 @@ exports[`Storyshots Header Behavior 1`] = `
                   onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "alignItems": "flex-start",
-                      "borderRadius": 4,
-                      "justifyContent": "center",
                       "opacity": 1,
-                      "paddingHorizontal": 0,
-                      "paddingVertical": 0,
                     }
                   }
                 >
@@ -4967,7 +4957,7 @@ exports[`Storyshots Text Passing Content 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#161637",
                   "flex": 1,
                 }
               }
@@ -5070,7 +5060,7 @@ exports[`Storyshots Text Passing Content 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#161637",
                   "flex": 1,
                 }
               }
@@ -5187,7 +5177,7 @@ exports[`Storyshots Text Passing Content 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#161637",
                   "flex": 1,
                 }
               }
@@ -5290,7 +5280,7 @@ exports[`Storyshots Text Passing Content 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#161637",
                   "flex": 1,
                 }
               }
@@ -5442,7 +5432,7 @@ exports[`Storyshots Text Style Presets 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#161637",
                   "flex": 1,
                 }
               }
@@ -5597,7 +5587,7 @@ exports[`Storyshots Text Style Presets 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#161637",
                   "flex": 1,
                 }
               }
@@ -5701,7 +5691,7 @@ exports[`Storyshots Text Style Presets 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#161637",
                   "flex": 1,
                 }
               }
@@ -5839,7 +5829,7 @@ exports[`Storyshots Text Styling 1`] = `
               style={
                 Array [
                   Object {
-                    "backgroundColor": undefined,
+                    "backgroundColor": "#161637",
                     "flex": 1,
                   },
                   Object {
