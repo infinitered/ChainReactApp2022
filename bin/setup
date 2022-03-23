@@ -21,6 +21,13 @@ command -v brew >/dev/null 2>&1 || {
 # Ensure Node.js is installed
 command -v npm >/dev/null 2>&1 || {
   echo "This app requires Node.js to run, but it was not found on your system."
+  read -p "Install Node.js with homebrew [y/n]? " -n 1 -r
+  echo  # (optional) move to a new line
+  if [[ ! $REPLY =~ ^[Yy]$ ]]
+  then
+    echo "Installation Aborted."
+    exit 1
+  fi
   echo "Installing node with brew..."
   brew install node
 }
@@ -28,6 +35,13 @@ command -v npm >/dev/null 2>&1 || {
 # Ensure Watchman is installed
 command -v watchman >/dev/null 2>&1 || {
   echo "This app requires Watchman to watch file changes, but it was not found on your system."
+  read -p "Install Watchman with homebrew [y/n]? " -n 1 -r
+  echo  # (optional) move to a new line
+  if [[ ! $REPLY =~ ^[Yy]$ ]]
+  then
+    echo "Installation Aborted."
+    exit 1
+  fi
   echo "Installing watchman with brew..."
   brew install watchman
 }
@@ -35,6 +49,13 @@ command -v watchman >/dev/null 2>&1 || {
 # Ensure Yarn is installed
 command -v yarn >/dev/null 2>&1 || {
   echo "This app requires Yarn package manager, but it was not found on your system."
+  read -p "Install yarn with homebrew [y/n]? " -n 1 -r
+  echo  # (optional) move to a new line
+  if [[ ! $REPLY =~ ^[Yy]$ ]]
+  then
+    echo "Installation Aborted."
+    exit 1
+  fi
   echo "Installing yarn with brew..."
   brew install yarn
 }
@@ -42,6 +63,13 @@ command -v yarn >/dev/null 2>&1 || {
 # Ensure appleSimUtils is installed
 command -v applesimutils >/dev/null 2>&1 || {
   echo "This app requires appleSimUtils to run end to end tests, but it was not found on your system."
+  read -p "Install appleSimUtils with homebrew [y/n]? " -n 1 -r
+  echo  # (optional) move to a new line
+  if [[ ! $REPLY =~ ^[Yy]$ ]]
+  then
+    echo "Installation Aborted."
+    exit 1
+  fi
   echo "Installing applesimutils with brew..."
   brew tap wix/brew
   brew install applesimutils
@@ -50,6 +78,13 @@ command -v applesimutils >/dev/null 2>&1 || {
 # Ensure detox-cli is installed
 command -v detox >/dev/null 2>&1 || {
   echo "This app requires detox-cli to run end to end tests, but it was not found on your system."
+  read -p "Install detox-cli globally with npm [y/n]? " -n 1 -r
+  echo  # (optional) move to a new line
+  if [[ ! $REPLY =~ ^[Yy]$ ]]
+  then
+    echo "Installation Aborted."
+    exit 1
+  fi
   echo "Installing detox globally with npm..."
   npm install -g detox-cli
 }
